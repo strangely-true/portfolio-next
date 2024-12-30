@@ -44,7 +44,7 @@ export function TechCarousel() {
       }}
     >
       {[...Array(2)].map((_, index) => (
-        <div key={index} className="flex space-x-16 px-8">
+        <div key={index} className="flex py-20 space-x-16 px-8">
           {logos.map((logo, logoIndex) => (
             <div key={logoIndex} className="w-20 h-20 flex items-center justify-center">
               <Image src={logo.src} alt={logo.alt} width={80} height={80} />
