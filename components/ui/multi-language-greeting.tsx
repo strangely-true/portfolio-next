@@ -5,12 +5,38 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const greetings = [
   { language: 'English', text: 'Hello' },
-  { language: 'Hindi', text: 'Namaste' },
+  { language: 'Hindi', text: 'नमस्ते' },
   { language: 'Italian', text: 'Ciao' },
   { language: 'Spanish', text: 'Hola' },
   { language: 'French', text: 'Bonjour' },
   { language: 'Japanese', text: 'こんにちは' },
   { language: 'Chinese', text: '你好' },
+  { language: 'Bengali', text: 'স্বাগতম' },
+  { language: 'Telugu', text: 'నమస్తే' },
+  { language: 'Marathi', text: 'नमस्कार' },
+  { language: 'Tamil', text: 'வணக்கம்' },
+  { language: 'Gujarati', text: 'નમસ્તે' },
+  { language: 'Kannada', text: 'ನಮಸ್ಕಾರ' },
+  { language: 'Malayalam', text: 'നമസ്കാരം' },
+  { language: 'Punjabi', text: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ' },
+  { language: 'Odia', text: 'ନମସ୍କାର' },
+  { language: 'Assamese', text: 'নমস্কাৰ' },
+  { language: 'Urdu', text: 'سلام' },
+  { language: 'Portuguese', text: 'Olá' },
+  { language: 'Russian', text: 'Здравствуйте' },
+  { language: 'Korean', text: '안녕하세요' },
+  { language: 'German', text: 'Hallo' },
+  { language: 'Arabic', text: 'مرحبا' },
+  { language: 'Turkish', text: 'Merhaba' },
+  { language: 'Vietnamese', text: 'Xin chào' },
+  { language: 'Persian', text: 'سلام' },
+  { language: 'Javanese', text: 'Halo' },
+  { language: 'Thai', text: 'สวัสดี' },
+  { language: 'Dutch', text: 'Hallo' },
+  { language: 'Greek', text: 'Γειά σας' },
+  { language: 'Swedish', text: 'Hej' },
+  { language: 'Hungarian', text: 'Helló' },
+  { language: 'Polish', text: 'Cześć' },
 ]
 
 export function MultiLanguageGreeting() {
@@ -19,7 +45,7 @@ export function MultiLanguageGreeting() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % greetings.length)
-    }, 3000)
+    }, 2000)
     return () => clearInterval(timer)
   }, [])
 
@@ -40,4 +66,3 @@ export function MultiLanguageGreeting() {
     </div>
   )
 }
-

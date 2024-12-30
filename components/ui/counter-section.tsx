@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const AnimatedCounter = ({ value, title, suffix = '' }: { value: number; title: string; suffix?: string }) => {
   const ref = useRef<HTMLDivElement>(null)

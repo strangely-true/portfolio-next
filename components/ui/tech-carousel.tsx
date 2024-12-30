@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -26,15 +25,6 @@ const logos = [
 ]
 
 export function TechCarousel() {
-  const [loopNum, setLoopNum] = useState(0)
-  const [isFirstLoop, setIsFirstLoop] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoopNum((prevLoop) => prevLoop + 1)
-      setIsFirstLoop(false)
-    }, 0)
-  }, [])
 
   return (
     <div className="relative w-full overflow-hidden">

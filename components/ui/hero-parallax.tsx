@@ -108,7 +108,7 @@ export const Header = () => {
        Crafting the Future,<br /> One Line at a Time
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        I am a web developer dedicated to creating stunning and efficient web applications. Let's build something amazing together.
+        I am a web developer dedicated to creating stunning and efficient web applications. Let&apos;s build something amazing together.
       </p>
     </div>
   );

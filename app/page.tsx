@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { NavMenu } from "@/components/ui/nav-menu"
 import { Reveal } from "@/components/ui/reveal"
@@ -9,7 +8,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax"
 import { CounterSection } from "@/components/ui/counter-section"
 import { TechCarousel } from "@/components/ui/tech-carousel"
 import Image from "next/image"
-import Loader from '@/components/Loader'
+import { ProjectSection } from "@/components/ProjectSection"
 
 const products = [
   {
@@ -138,7 +137,7 @@ export default function Home() {
                   <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
                     <span className="cinematic-gradient">
                       <MultiLanguageGreeting />
-                      I'm Sabittwa
+                      I&apos;m Sabittwa
                     </span>
                   </h1>
                 </Reveal>
@@ -192,9 +191,10 @@ export default function Home() {
         <CounterSection />
         <TechCarousel />
 
-       
+       <ProjectSection/>
       </main>
     </>
   )
 }
+
 
