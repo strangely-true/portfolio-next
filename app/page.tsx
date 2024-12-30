@@ -1,101 +1,114 @@
-import Image from "next/image";
+"use client"
+
+import { motion } from "framer-motion"
+import { NavMenu } from "@/components/ui/nav-menu"
+import { Reveal } from "@/components/ui/reveal"
+import { MultiLanguageGreeting } from "@/components/ui/multi-language-greeting"
+import { HeroParallax } from "@/components/ui/hero-parallax"
+import Image from "next/image"
+
+const products = [
+  {
+    title: "Project 1",
+    link: "#",
+    thumbnail: "/placeholder.svg?height=600&width=600",
+  },
+  {
+    title: "Project 2",
+    link: "#",
+    thumbnail: "/placeholder.svg?height=600&width=600",
+  },
+  // Add more projects here...
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <NavMenu />
+      
+      <main className="overflow-hidden">
+        <section className="relative min-h-screen flex items-center">
+          {/* Background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-transparent opacity-80" />
+          
+          <div className="container mx-auto px-8 z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <Reveal>
+                  <motion.p 
+                    className="text-sm tracking-wider text-neutral-400"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Web Developer & Photographer
+                  </motion.p>
+                </Reveal>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+                <Reveal>
+                  <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                  
+                    <span className="cinematic-gradient"><MultiLanguageGreeting />I'm Sabittwa</span>
+                  </h1>
+                </Reveal>
+
+                <Reveal>
+                  <p className="text-lg text-neutral-300 max-w-md leading-relaxed">
+                    Computer Science student specializing in web development 
+                    and IoT solutions. Focused on crafting modern, innovative 
+                    digital experiences.
+                  </p>
+                </Reveal>
+
+                <Reveal>
+                  <div className="flex items-center gap-6">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-8 py-3 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-black rounded-full font-medium"
+                    >
+                      View Projects
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-8 py-3 border border-white/20 rounded-full font-medium hover:bg-white/10 transition-colors"
+                    >
+                      Contact Me
+                    </motion.button>
+                  </div>
+                </Reveal>
+              </div>
+
+              <div className="relative hidden lg:block">
+                {/* Placeholder for your photo */}
+                <div className="relative w-[400px] h-[500px] mx-auto">
+                  <div className="absolute inset-0 " />
+                  <Image
+                    src="/DSC09490.jpg"
+                    alt="Sabittwa Banerjee"
+                    fill
+                    className="object-cover rounded-2xl"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll indicator
+          <motion.div 
+            className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <p className="text-sm text-neutral-400 tracking-wider">SCROLL</p>
+          </motion.div> */}
+        </section>
+
+        <HeroParallax products={products} />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    </>
+  )
 }
+
