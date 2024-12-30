@@ -1,12 +1,15 @@
 "use client"
 
+import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { NavMenu } from "@/components/ui/nav-menu"
 import { Reveal } from "@/components/ui/reveal"
 import { MultiLanguageGreeting } from "@/components/ui/multi-language-greeting"
 import { HeroParallax } from "@/components/ui/hero-parallax"
 import { CounterSection } from "@/components/ui/counter-section"
+import { TechCarousel } from "@/components/ui/tech-carousel"
 import Image from "next/image"
+import Loader from '@/components/Loader'
 
 const products = [
   {
@@ -92,13 +95,30 @@ const products = [
 ]
 
 export default function Home() {
+  // const [isLoading, setIsLoading] = useState(true)
+
+  // useEffect(() => {
+  //   // Simulate loading time
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 2000)
+
+  //   return () => clearTimeout(timer)
+  // }, [])
+
+  // if (isLoading) {
+  //   return (
+  //     <Loader />
+  //   )
+  // }
+
   return (
     <>
       <NavMenu />
       
       <main className="overflow-hidden">
         <section className="relative min-h-screen flex items-center">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-b" />
           
           <div className="container mx-auto px-8 z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -167,9 +187,12 @@ export default function Home() {
         </section>
 
         
-        <HeroParallax products={products} />
 
+        <HeroParallax products={products} />
         <CounterSection />
+        <TechCarousel />
+
+       
       </main>
     </>
   )

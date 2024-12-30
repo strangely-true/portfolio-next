@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import Image from 'next/image'
 
-const AnimatedCounter = ({ value, title }: { value: number; title: string }) => {
+const AnimatedCounter = ({ value, title, suffix = '' }: { value: number; title: string; suffix?: string }) => {
   const ref = useRef<HTMLDivElement>(null)
   const motionValue = useMotionValue(0)
   const springValue = useSpring(motionValue, { duration: 3000 })
@@ -19,10 +19,10 @@ const AnimatedCounter = ({ value, title }: { value: number; title: string }) => 
   useEffect(() => {
     springValue.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat('en-US').format(Math.floor(latest))
+        ref.current.textContent = Intl.NumberFormat('en-US').format(Math.floor(latest)) + suffix
       }
     })
-  }, [springValue])
+  }, [springValue, suffix])
 
   return (
     <div className="flex flex-col items-center">
@@ -49,7 +49,7 @@ export function CounterSection() {
       <div className="absolute inset-0" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <AnimatedCounter value={500} title="LinkedIn Followers" />
+          <AnimatedCounter value={500} title="LinkedIn Followers" suffix="+" />
           <AnimatedCounter value={13} title="LeetCode Problems Solved" />
           <AnimatedCounter value={0} title="Years of Experience" />
         </div>
