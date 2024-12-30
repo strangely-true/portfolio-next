@@ -5,20 +5,90 @@ import { NavMenu } from "@/components/ui/nav-menu"
 import { Reveal } from "@/components/ui/reveal"
 import { MultiLanguageGreeting } from "@/components/ui/multi-language-greeting"
 import { HeroParallax } from "@/components/ui/hero-parallax"
+import { CounterSection } from "@/components/ui/counter-section"
 import Image from "next/image"
 
 const products = [
   {
-    title: "Project 1",
-    link: "#",
-    thumbnail: "/placeholder.svg?height=600&width=600",
+    title: "Coordina",
+    link: "#projects",
+    thumbnail: "/coordina.png",
   },
   {
-    title: "Project 2",
-    link: "#",
-    thumbnail: "/placeholder.svg?height=600&width=600",
+    title: "MealMetric",
+    link: "#projects",
+    thumbnail: "/mealmetric.png",
   },
-  // Add more projects here...
+  {
+    title: "Chat App",
+    link: "#projects",
+    thumbnail: "/chat-app.png",
+  },
+  {
+    title: "MealMetric Dashboard",
+    link: "#projects",
+    thumbnail: "/mealmetric.png",
+  },
+  {
+    title: "Project 5",
+    link: "#projects",
+    thumbnail: "/coordina.png",
+  },
+  {
+    title: "Project 6",
+    link: "#projects",
+    thumbnail: "/mealmetric.png",
+  },
+  {
+    title: "Project 7",
+    link: "#projects",
+    thumbnail: "/chat-app.png",
+  },
+  {
+    title: "Project 8",
+    link: "#projects",
+    thumbnail: "/coordina.png",
+  },
+  {
+    title: "Project 9",
+    link: "#projects",
+    thumbnail: "/mealmetric.png",
+  },
+  {
+    title: "Project 10",
+    link: "#projects",
+    thumbnail: "/chat-app.png",
+  },
+  {
+    title: "Project 11",
+    link: "#projects",
+    thumbnail: "/coordina.png",
+  },
+  {
+    title: "Project 12",
+    link: "#projects",
+    thumbnail: "/mealmetric.png",
+  },
+  {
+    title: "Project 13",
+    link: "#projects",
+    thumbnail: "/chat-app.png",
+  },
+  {
+    title: "Project 14",
+    link: "#projects",
+    thumbnail: "/coordina.png",
+  },
+  {
+    title: "Project 15",
+    link: "#projects",
+    thumbnail: "/mealmetric.png",
+  },
+  {
+    title: "Project 16",
+    link: "#projects",
+    thumbnail: "/chat-app.png",
+  },
 ]
 
 export default function Home() {
@@ -28,7 +98,6 @@ export default function Home() {
       
       <main className="overflow-hidden">
         <section className="relative min-h-screen flex items-center">
-          {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-transparent opacity-80" />
           
           <div className="container mx-auto px-8 z-10">
@@ -47,8 +116,10 @@ export default function Home() {
 
                 <Reveal>
                   <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                  
-                    <span className="cinematic-gradient"><MultiLanguageGreeting />I'm Sabittwa</span>
+                    <span className="cinematic-gradient">
+                      <MultiLanguageGreeting />
+                      I'm Sabittwa
+                    </span>
                   </h1>
                 </Reveal>
 
@@ -81,9 +152,7 @@ export default function Home() {
               </div>
 
               <div className="relative hidden lg:block">
-                {/* Placeholder for your photo */}
                 <div className="relative w-[400px] h-[500px] mx-auto">
-                  <div className="absolute inset-0 " />
                   <Image
                     src="/DSC09490.jpg"
                     alt="Sabittwa Banerjee"
@@ -95,18 +164,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Scroll indicator
-          <motion.div 
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <p className="text-sm text-neutral-400 tracking-wider">SCROLL</p>
-          </motion.div> */}
         </section>
 
+        
         <HeroParallax products={products} />
+
+        <CounterSection />
       </main>
     </>
   )
