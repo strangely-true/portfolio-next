@@ -7,7 +7,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax"
 import { CounterSection } from "@/components/ui/counter-section"
 import { TechCarousel } from "@/components/ui/tech-carousel"
 import Image from "next/image"
-import { ProjectSection } from "@/components/ProjectSection"
+// import { ProjectSection } from "@/components/ProjectSection"
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import Header from "@/components/Header"
 
