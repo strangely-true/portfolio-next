@@ -3,7 +3,7 @@ import { Linkedin, Github, Mail } from 'lucide-react'
 
 export default function Header() {
   return (
-    <header className="py-6 bg-black/30 backdrop-blur-sm">
+    <header className="py-6">
       <nav className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="text-lg nav-link text-white">
           Sabittwa Banerjee

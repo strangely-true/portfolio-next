@@ -30,12 +30,9 @@ const greetings = [
   { language: 'Turkish', text: 'Merhaba' },
   { language: 'Vietnamese', text: 'Xin chào' },
   { language: 'Persian', text: 'سلام' },
-  { language: 'Javanese', text: 'Halo' },
   { language: 'Thai', text: 'สวัสดี' },
-  { language: 'Dutch', text: 'Hallo' },
   { language: 'Greek', text: 'Γειά σας' },
   { language: 'Swedish', text: 'Hej' },
-  { language: 'Hungarian', text: 'Helló' },
   { language: 'Polish', text: 'Cześć' },
 ]
 
@@ -50,7 +47,7 @@ export function MultiLanguageGreeting() {
   }, [])
 
   return (
-    <div className="h-20 overflow-hidden">
+    <div className="h-20 overflow-y-visible ">
       <AnimatePresence mode="wait">
         <motion.div
           key={greetings[index].language}

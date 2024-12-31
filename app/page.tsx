@@ -1,7 +1,6 @@
 "use client"
-
+import { FloatingNav } from "@/components/ui/floating-navbar"
 import { motion } from "framer-motion"
-import { NavMenu } from "@/components/ui/nav-menu"
 import { Reveal } from "@/components/ui/reveal"
 import { MultiLanguageGreeting } from "@/components/ui/multi-language-greeting"
 import { HeroParallax } from "@/components/ui/hero-parallax"
@@ -9,7 +8,29 @@ import { CounterSection } from "@/components/ui/counter-section"
 import { TechCarousel } from "@/components/ui/tech-carousel"
 import Image from "next/image"
 import { ProjectSection } from "@/components/ProjectSection"
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import Header from "@/components/Header"
 
+
+const navItems = [
+  {
+    name: "Home",
+    link: "#",
+    icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Projects",
+    link: "#projects",
+    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Contact",
+    link: "#contact",
+    icon: (
+      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+    ),
+  },
+];
 const products = [
   {
     title: "Coordina",
@@ -113,7 +134,8 @@ export default function Home() {
 
   return (
     <>
-      <NavMenu />
+      <Header />
+      <FloatingNav navItems={navItems} />
       
       <main className="overflow-hidden">
         <section className="relative min-h-screen flex items-center">
@@ -191,7 +213,6 @@ export default function Home() {
         <CounterSection />
         <TechCarousel />
 
-       <ProjectSection/>
       </main>
     </>
   )
