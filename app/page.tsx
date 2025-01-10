@@ -10,6 +10,8 @@ import Image from "next/image"
 // import { ProjectSection } from "@/components/ProjectSection"
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import Header from "@/components/Header"
+import { useEffect, useState } from "react"
+import { Loader } from "lucide-react"
 
 
 const navItems = [
@@ -115,22 +117,22 @@ const products = [
 ]
 
 export default function Home() {
-  // const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
-  // useEffect(() => {
-  //   // Simulate loading time
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 2000)
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
 
-  //   return () => clearTimeout(timer)
-  // }, [])
+    return () => clearTimeout(timer)
+  }, [])
 
-  // if (isLoading) {
-  //   return (
-  //     <Loader />
-  //   )
-  // }
+  if (isLoading) {
+    return (
+      <Loader />
+    )
+  }
 
   return (
     <>
@@ -209,9 +211,10 @@ export default function Home() {
 
         
 
-        <HeroParallax products={products} />
+        {/* <HeroParallax products={products} /> */}
         <CounterSection />
         <TechCarousel />
+        <HeroParallax products={products} />
 
       </main>
     </>
