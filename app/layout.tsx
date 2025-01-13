@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { ShootingStars } from '@/components/ui/shooting-stars'
 import { StarsBackground } from '@/components/ui/stars-background'
+import CustomCursor from '@/components/ui/custom-cursor'
+
 // import Loader from '@/components/Loader'
 
 export const metadata: Metadata = {
@@ -22,8 +24,9 @@ export default function RootLayout({
           <ShootingStars />
           <StarsBackground />
         </div>
-        
+        <CustomCursor />
         {children}
+        
       </body>
     </html>
   )

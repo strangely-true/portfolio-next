@@ -8,18 +8,40 @@
   --background: 0 0% 0%;
   --foreground: 0 0% 100%;
 }
-html, body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-body::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff33;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff66;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Customize scrolling speed */
+    scroll-timeline: --page-scroll block;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-padding: 100px;
+  }
+
   body {
-    @apply bg-black text-white font-object-sans;
+    @apply bg-black text-white font-object-sans cursor-none;
+  }
+  /* Hide cursor on interactive elements */
+  a, button, [data-hover] {
+    @apply cursor-none;
   }
 }
 
@@ -98,15 +120,6 @@ body::-webkit-scrollbar {
   }
 }
 
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
 @font-face {
   font-family: 'Sorren';
