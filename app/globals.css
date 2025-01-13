@@ -1,5 +1,5 @@
 @import url('https://api.fontshare.com/v2/css?f[ ]=object-sans@400,500,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,6 +35,9 @@ body::-webkit-scrollbar {
 
 .font-object-sans {
   font-family: 'Object Sans', sans-serif;
+}
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 
@@ -103,4 +106,36 @@ body::-webkit-scrollbar {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: 'Sorren';
+  src: url('/fonts/Sorren-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sorren';
+  src: url('/fonts/Sorren-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sorren';
+  src: url('/fonts/Sorren-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sorren';
+  src: url('/fonts/Sorren-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }

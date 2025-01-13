@@ -11,7 +11,7 @@ import Image from "next/image"
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import Header from "@/components/Header"
 import { useEffect, useState } from "react"
-import { Loader } from "lucide-react"
+import Loader  from "@/components/Loader"
 
 
 const navItems = [

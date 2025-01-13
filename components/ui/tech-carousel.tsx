@@ -24,6 +24,8 @@ const logos = [
     { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', alt: 'Tailwind CSS' },
 ]
 
+const duplicatedLogos = [...logos, ...logos];
+
 export function TechCarousel() {
 
   return (
@@ -45,7 +47,7 @@ export function TechCarousel() {
     >
       {[...Array(2)].map((_, index) => (
         <div key={index} className="flex py-20 space-x-16 px-8">
-          {logos.map((logo, logoIndex) => (
+          {duplicatedLogos.map((logo, logoIndex) => (
             <div key={logoIndex} className="w-20 h-20 flex items-center justify-center">
               <Image src={logo.src} alt={logo.alt} width={80} height={80} />
             </div>

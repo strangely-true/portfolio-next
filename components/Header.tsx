@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Linkedin, Github, Mail } from 'lucide-react'
+import { Linkedin, Github, Mail, FileBadge } from 'lucide-react'
 
 const GalaxyHeader: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -82,6 +82,7 @@ const GalaxyHeader: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
+          <SocialLink href="/resume.pdf" icon={FileBadge} label="Download Resume" />
           <SocialLink href="mailto:sabittwa.work@gmail.com" icon={Mail} label="Email" />
           <SocialLink href="https://www.linkedin.com/in/sabittwa-banerjee" icon={Linkedin} label="LinkedIn" />
           <SocialLink href="https://github.com/strangely-true" icon={Github} label="GitHub" />

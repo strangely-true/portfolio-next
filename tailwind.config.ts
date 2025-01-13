@@ -9,6 +9,15 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			sorren: ['Sorren', 'sans-serif'],
+		  },
+		  fontWeight: {
+			medium: '500',
+			semibold: '600',
+			bold: '700',
+			black: '900',
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
