@@ -12,7 +12,7 @@ import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import Header from "@/components/Header"
 import { useEffect, useState } from "react"
 import Loader  from "@/components/Loader"
-
+import { ScrollRevealText } from "@/components/ScrollRevealText"
 
 const navItems = [
   {
@@ -168,9 +168,7 @@ export default function Home() {
 
                 <Reveal>
                   <p className="text-lg text-neutral-300 max-w-md leading-relaxed">
-                    Computer Science student specializing in web development 
-                    and IoT solutions. Focused on crafting modern, innovative 
-                    digital experiences.
+                    Based in Kolkata, India.
                   </p>
                 </Reveal>
 
@@ -208,9 +206,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         
-
+        <ScrollRevealText />
         {/* <HeroParallax products={products} /> */}
         <CounterSection />
         <TechCarousel />

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Linkedin, Github, Mail, FileBadge } from 'lucide-react'
@@ -8,60 +8,60 @@ import { Linkedin, Github, Mail, FileBadge } from 'lucide-react'
 const GalaxyHeader: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
+  // useEffect(() => {
+  //   const canvas = canvasRef.current
+  //   if (!canvas) return
 
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+  //   const ctx = canvas.getContext('2d')
+  //   if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = 100
+  //   canvas.width = window.innerWidth
+  //   canvas.height = 100
 
-    const stars: { x: number; y: number; radius: number; vx: number; vy: number }[] = []
+  //   const stars: { x: number; y: number; radius: number; vx: number; vy: number }[] = []
 
-    for (let i = 0; i < 100; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.5,
-        vx: Math.random() * 0.5 - 0.25,
-        vy: Math.random() * 0.5 - 0.25
-      })
-    }
+  //   for (let i = 0; i < 100; i++) {
+  //     stars.push({
+  //       x: Math.random() * canvas.width,
+  //       y: Math.random() * canvas.height,
+  //       radius: Math.random() * 1.5,
+  //       vx: Math.random() * 0.5 - 0.25,
+  //       vy: Math.random() * 0.5 - 0.25
+  //     })
+  //   }
 
-    function drawStars() {
-      if (!ctx) return
-      if (!canvas) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.fillStyle = 'white'
-      stars.forEach(star => {
-        ctx.beginPath()
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2)
-        ctx.fill()
+  //   function drawStars() {
+  //     if (!ctx) return
+  //     if (!canvas) return
+  //     ctx.clearRect(0, 0, canvas.width, canvas.height)
+  //     ctx.fillStyle = 'white'
+  //     stars.forEach(star => {
+  //       ctx.beginPath()
+  //       ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2)
+  //       ctx.fill()
 
-        star.x += star.vx
-        star.y += star.vy
+  //       star.x += star.vx
+  //       star.y += star.vy
 
-        if (star.x < 0 || star.x > canvas.width) star.vx = -star.vx
-        if (star.y < 0 || star.y > canvas.height) star.vy = -star.vy
-      })
-      requestAnimationFrame(drawStars)
-    }
+  //       if (star.x < 0 || star.x > canvas.width) star.vx = -star.vx
+  //       if (star.y < 0 || star.y > canvas.height) star.vy = -star.vy
+  //     })
+  //     requestAnimationFrame(drawStars)
+  //   }
 
-    drawStars()
+  //   drawStars()
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = 100
-    }
+  //   const handleResize = () => {
+  //     canvas.width = window.innerWidth
+  //     canvas.height = 100
+  //   }
 
-    window.addEventListener('resize', handleResize)
+  //   window.addEventListener('resize', handleResize)
 
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize)
+  //   }
+  // }, [])
 
   return (
     <header className="relative h-10 pt-4 overflow-hidden">
@@ -72,9 +72,9 @@ const GalaxyHeader: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link href="/" className="text-2xl font-bold text-white hover:text-purple-300 transition-colors">
+            <Link href="/" className="text-2xl font-bold text-white hover:text-purple-300 hover:cinematic-gradient transition-colors">
             SB
-          </Link>
+            </Link>
         </motion.div>
         <motion.div
           className="flex space-x-4"
@@ -109,8 +109,8 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon: Icon, label }) => (
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
     >
-      <Icon className="w-6 h-6" />
-      <span className="sr-only">{label}</span>
+      <Icon className="w-6 h-6 " />
+      <span className="sr-only ">{label}</span>
     </motion.div>
   </Link>
 )

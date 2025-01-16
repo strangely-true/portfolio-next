@@ -23,7 +23,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffffff66;
+  background: linear-gradient(to bottom, #facc15, #ef4444, #ec4899);
 }
 
 @layer base {

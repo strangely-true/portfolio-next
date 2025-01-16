@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { ShootingStars } from '@/components/ui/shooting-stars'
 import { StarsBackground } from '@/components/ui/stars-background'
 import CustomCursor from '@/components/ui/custom-cursor'
+import { SmoothScroll } from '@/components/SmoothScroll'
 
 // import Loader from '@/components/Loader'
 
@@ -25,8 +26,9 @@ export default function RootLayout({
           <StarsBackground />
         </div>
         <CustomCursor />
+        <SmoothScroll>
         {children}
-        
+        </SmoothScroll>
       </body>
     </html>
   )
