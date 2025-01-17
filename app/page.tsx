@@ -12,6 +12,7 @@ import Loader  from "@/components/Loader"
 import { ScrollRevealText } from "@/components/ScrollRevealText"
 import { ProjectSection } from "@/components/ProjectSection"
 import { ScrollToTopButton } from "@/components/ui/scrolltotopbutton"
+import ContactSection from "@/components/ui/contact-section"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -33,7 +34,6 @@ export default function Home() {
 
   return (
     <>
-
       <FloatingNav/>
       
       <main className="overflow-hidden">
@@ -114,6 +114,23 @@ export default function Home() {
         <section id="projects">
         <ProjectSection />
         </section>
+
+      <ContactSection />
+      
+
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="relative bottom-8 left-0 right-0 flex justify-between px-8 text-sm text-white/50"
+      >
+        <p>©2025 Sabittwa Banerjee</p>
+        <div className="flex items-center space-x-2">
+          <span className="w-2 h-2 rounded-full bg-green-500" />
+          <span>Available for a full-time position</span>
+        </div>
+        <p>Made by Sabittwa B.</p>
+      </motion.div>
         <ScrollToTopButton />
       </main>
     </>
