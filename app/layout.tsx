@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased min-h-screen bg-black text-white">
+      <body className="antialiased min-h-screen bg-gray-950 text-white">
       
         <div className="fixed inset-0 z-0">
           <ShootingStars />

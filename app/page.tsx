@@ -3,16 +3,16 @@ import { FloatingNav } from "@/components/ui/floating-navbar"
 import { motion } from "framer-motion"
 import { Reveal } from "@/components/ui/reveal"
 import { MultiLanguageGreeting } from "@/components/ui/multi-language-greeting"
-import { HeroParallax } from "@/components/ui/hero-parallax"
+// import { HeroParallax } from "@/components/ui/hero-parallax"
 import { CounterSection } from "@/components/ui/counter-section"
 import { TechCarousel } from "@/components/ui/tech-carousel"
 import Image from "next/image"
-// import { ProjectSection } from "@/components/ProjectSection"
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import Header from "@/components/Header"
 import { useEffect, useState } from "react"
 import Loader  from "@/components/Loader"
 import { ScrollRevealText } from "@/components/ScrollRevealText"
+import { ProjectSection } from "@/components/ProjectSection"
 
 const navItems = [
   {
@@ -33,88 +33,88 @@ const navItems = [
     ),
   },
 ];
-const products = [
-  {
-    title: "Coordina",
-    link: "#projects",
-    thumbnail: "/coordina.png",
-  },
-  {
-    title: "MealMetric",
-    link: "#projects",
-    thumbnail: "/mealmetric.png",
-  },
-  {
-    title: "Chat App",
-    link: "#projects",
-    thumbnail: "/chat-app.png",
-  },
-  {
-    title: "MealMetric Dashboard",
-    link: "#projects",
-    thumbnail: "/mealmetric.png",
-  },
-  {
-    title: "Project 5",
-    link: "#projects",
-    thumbnail: "/coordina.png",
-  },
-  {
-    title: "Project 6",
-    link: "#projects",
-    thumbnail: "/mealmetric.png",
-  },
-  {
-    title: "Project 7",
-    link: "#projects",
-    thumbnail: "/chat-app.png",
-  },
-  {
-    title: "Project 8",
-    link: "#projects",
-    thumbnail: "/coordina.png",
-  },
-  {
-    title: "Project 9",
-    link: "#projects",
-    thumbnail: "/mealmetric.png",
-  },
-  {
-    title: "Project 10",
-    link: "#projects",
-    thumbnail: "/chat-app.png",
-  },
-  {
-    title: "Project 11",
-    link: "#projects",
-    thumbnail: "/coordina.png",
-  },
-  {
-    title: "Project 12",
-    link: "#projects",
-    thumbnail: "/mealmetric.png",
-  },
-  {
-    title: "Project 13",
-    link: "#projects",
-    thumbnail: "/chat-app.png",
-  },
-  {
-    title: "Project 14",
-    link: "#projects",
-    thumbnail: "/coordina.png",
-  },
-  {
-    title: "Project 15",
-    link: "#projects",
-    thumbnail: "/mealmetric.png",
-  },
-  {
-    title: "Project 16",
-    link: "#projects",
-    thumbnail: "/chat-app.png",
-  },
-]
+// const products = [
+//   {
+//     title: "Coordina",
+//     link: "#projects",
+//     thumbnail: "/coordina.png",
+//   },
+//   {
+//     title: "MealMetric",
+//     link: "#projects",
+//     thumbnail: "/mealmetric.png",
+//   },
+//   {
+//     title: "Chat App",
+//     link: "#projects",
+//     thumbnail: "/chat-app.png",
+//   },
+//   {
+//     title: "MealMetric Dashboard",
+//     link: "#projects",
+//     thumbnail: "/mealmetric.png",
+//   },
+//   {
+//     title: "Project 5",
+//     link: "#projects",
+//     thumbnail: "/coordina.png",
+//   },
+//   {
+//     title: "Project 6",
+//     link: "#projects",
+//     thumbnail: "/mealmetric.png",
+//   },
+//   {
+//     title: "Project 7",
+//     link: "#projects",
+//     thumbnail: "/chat-app.png",
+//   },
+//   {
+//     title: "Project 8",
+//     link: "#projects",
+//     thumbnail: "/coordina.png",
+//   },
+//   {
+//     title: "Project 9",
+//     link: "#projects",
+//     thumbnail: "/mealmetric.png",
+//   },
+//   {
+//     title: "Project 10",
+//     link: "#projects",
+//     thumbnail: "/chat-app.png",
+//   },
+//   {
+//     title: "Project 11",
+//     link: "#projects",
+//     thumbnail: "/coordina.png",
+//   },
+//   {
+//     title: "Project 12",
+//     link: "#projects",
+//     thumbnail: "/mealmetric.png",
+//   },
+//   {
+//     title: "Project 13",
+//     link: "#projects",
+//     thumbnail: "/chat-app.png",
+//   },
+//   {
+//     title: "Project 14",
+//     link: "#projects",
+//     thumbnail: "/coordina.png",
+//   },
+//   {
+//     title: "Project 15",
+//     link: "#projects",
+//     thumbnail: "/mealmetric.png",
+//   },
+//   {
+//     title: "Project 16",
+//     link: "#projects",
+//     thumbnail: "/chat-app.png",
+//   },
+// ]
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -158,7 +158,7 @@ export default function Home() {
                 </Reveal>
 
                 <Reveal>
-                  <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                  <h1 className="text-6xl md:text-6xl lg:text-7xl font-bold leading-tight">
                     <span className="cinematic-gradient">
                       <MultiLanguageGreeting />
                       I&apos;m Sabittwa
@@ -211,7 +211,7 @@ export default function Home() {
         {/* <HeroParallax products={products} /> */}
         <CounterSection />
         <TechCarousel />
-        <HeroParallax products={products} />
+        <ProjectSection />
 
       </main>
     </>
