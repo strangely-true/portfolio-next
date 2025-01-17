@@ -21,7 +21,7 @@ export default function ContactSection() {
         description: "Email address has been copied.",
       })
       setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
+    } catch {
       toast({
         variant: "destructive",
         title: "Failed to copy",
@@ -31,6 +31,7 @@ export default function ContactSection() {
   }
 
   return (
+    <>
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
       <div className="w-full mx-auto text-center space-y-16 border border-white/10 rounded-[2rem] py-28 px-8">
         <motion.h2 
@@ -103,6 +104,20 @@ export default function ContactSection() {
       </div>
       <Toaster />
     </section>
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="relative bottom-8 left-0 right-0 flex justify-between px-8 text-sm text-white/50"
+      >
+        <p>©2025 Sabittwa Banerjee</p>
+        <div className="flex items-center space-x-2">
+          <span className="w-2 h-2 rounded-full bg-green-500" />
+          <span>Available for a full-time position</span>
+        </div>
+        <p>Made by Sabittwa B.</p>
+      </motion.div>
+    </>
   )
 }
 
