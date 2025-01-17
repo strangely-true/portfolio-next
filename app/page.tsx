@@ -7,114 +7,11 @@ import { MultiLanguageGreeting } from "@/components/ui/multi-language-greeting"
 import { CounterSection } from "@/components/ui/counter-section"
 import { TechCarousel } from "@/components/ui/tech-carousel"
 import Image from "next/image"
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-import Header from "@/components/Header"
 import { useEffect, useState } from "react"
 import Loader  from "@/components/Loader"
 import { ScrollRevealText } from "@/components/ScrollRevealText"
 import { ProjectSection } from "@/components/ProjectSection"
-
-const navItems = [
-  {
-    name: "Home",
-    link: "#",
-    icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-  {
-    name: "Projects",
-    link: "#projects",
-    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-  {
-    name: "Contact",
-    link: "#contact",
-    icon: (
-      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-    ),
-  },
-];
-// const products = [
-//   {
-//     title: "Coordina",
-//     link: "#projects",
-//     thumbnail: "/coordina.png",
-//   },
-//   {
-//     title: "MealMetric",
-//     link: "#projects",
-//     thumbnail: "/mealmetric.png",
-//   },
-//   {
-//     title: "Chat App",
-//     link: "#projects",
-//     thumbnail: "/chat-app.png",
-//   },
-//   {
-//     title: "MealMetric Dashboard",
-//     link: "#projects",
-//     thumbnail: "/mealmetric.png",
-//   },
-//   {
-//     title: "Project 5",
-//     link: "#projects",
-//     thumbnail: "/coordina.png",
-//   },
-//   {
-//     title: "Project 6",
-//     link: "#projects",
-//     thumbnail: "/mealmetric.png",
-//   },
-//   {
-//     title: "Project 7",
-//     link: "#projects",
-//     thumbnail: "/chat-app.png",
-//   },
-//   {
-//     title: "Project 8",
-//     link: "#projects",
-//     thumbnail: "/coordina.png",
-//   },
-//   {
-//     title: "Project 9",
-//     link: "#projects",
-//     thumbnail: "/mealmetric.png",
-//   },
-//   {
-//     title: "Project 10",
-//     link: "#projects",
-//     thumbnail: "/chat-app.png",
-//   },
-//   {
-//     title: "Project 11",
-//     link: "#projects",
-//     thumbnail: "/coordina.png",
-//   },
-//   {
-//     title: "Project 12",
-//     link: "#projects",
-//     thumbnail: "/mealmetric.png",
-//   },
-//   {
-//     title: "Project 13",
-//     link: "#projects",
-//     thumbnail: "/chat-app.png",
-//   },
-//   {
-//     title: "Project 14",
-//     link: "#projects",
-//     thumbnail: "/coordina.png",
-//   },
-//   {
-//     title: "Project 15",
-//     link: "#projects",
-//     thumbnail: "/mealmetric.png",
-//   },
-//   {
-//     title: "Project 16",
-//     link: "#projects",
-//     thumbnail: "/chat-app.png",
-//   },
-// ]
+import { ScrollToTopButton } from "@/components/ui/scrolltotopbutton"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -136,11 +33,11 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <FloatingNav navItems={navItems} />
+
+      <FloatingNav/>
       
       <main className="overflow-hidden">
-        <section className="relative min-h-screen flex items-center">
+        <section id = "home" className="relative min-h-screen flex items-center">
           <div className="absolute inset-0 bg-gradient-to-b" />
           
           <div className="container mx-auto px-8 z-10">
@@ -207,12 +104,17 @@ export default function Home() {
           </div>
         </section>
         
-        <ScrollRevealText />
+        <section id="about">
+          <ScrollRevealText />
+        </section>
         {/* <HeroParallax products={products} /> */}
         <CounterSection />
         <TechCarousel />
-        <ProjectSection />
 
+        <section id="projects">
+        <ProjectSection />
+        </section>
+        <ScrollToTopButton />
       </main>
     </>
   )

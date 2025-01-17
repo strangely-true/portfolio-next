@@ -1,110 +1,145 @@
-"use client";
-import React, { JSX, useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+'use client'
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
-}) => {
-  const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(false);
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { cn } from '@/lib/utils'
+import Link from 'next/link'
+import { IconHome, IconUser, IconMessage, IconBriefcase } from '@tabler/icons-react'
+import { useLenis } from 'lenis/react'
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      const direction = current! - scrollYProgress.getPrevious()!;
+const navItems = [
+  {
+    name: 'Home',
+    link: '#home',
+    icon: <IconHome className="h-4 w-4" />,
+  },
+  {
+    name: 'About',
+    link: '#about',
+    icon: <IconUser className="h-4 w-4" />,
+  },
+  {
+    name: 'Projects',
+    link: '#projects',
+    icon: <IconBriefcase className="h-4 w-4" />,
+  },
+  {
+    name: 'Contact',
+    link: '#contact',
+    icon: <IconMessage className="h-4 w-4" />,
+  },
+]
 
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
+export const FloatingNav = ({ className }: { className?: string }) => {
+  const [activeSection, setActiveSection] = useState('')
+  const [visible, setVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const lenis = useLenis()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!lenis) return
+
+      const currentScrollY = lenis.scroll
+
+      if (currentScrollY < lastScrollY) {
+        setVisible(true)
+      } else if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        setVisible(false)
+      }
+
+      setLastScrollY(currentScrollY)
+
+      const sections = navItems.map(item => item.name.toLowerCase())
+      let currentSection = ''
+
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section
+            break
+          }
         }
       }
+
+      setActiveSection(currentSection)
     }
-  });
+
+    lenis?.on('scroll', handleScroll)
+
+    return () => {
+      lenis?.off('scroll', handleScroll)
+    }
+  }, [lenis, lastScrollY])
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    e.preventDefault()
+    const targetId = link.replace('#', '')
+    const element = document.getElementById(targetId)
+    if (element && lenis) {
+      lenis.scrollTo(element, { offset: -100 })
+    }
+  }
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.3,
-          ease: [0.22, 1, 0.36, 1], // Custom cubic bezier for smooth animation
-        }}
-        className={cn(
-          "flex max-w-full fixed top-0 inset-x-0 mx-auto z-[5000] px-8 py-6 items-center justify-between",
-          "bg-gradient-to-b from-black to-transparent",
-          className
-        )}
-            >
-        <Link href="/" className="text-2xl text-white hover:cinematic-gradient transition-opacity">
-         Sabittwa.
-        </Link>
-        
-        <div className="flex items-center space-x-8">
-          {navItems.map((navItem: { name: string; link: string; icon?: JSX.Element }, idx: number) => (
-            <Link
-              key={`link=${idx}`}
-              href={navItem.link}
-              className="group relative overflow-hidden"
-            >
-              <motion.div
-                className="text-white group-hover:cinematic-gradient transition-colors"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -2 }}
-                transition={{ 
-                  delay: idx * 0.1,
-                  duration: 0.3,
-                  ease: [0.22, 1, 0.36, 1]
-                }}
-              >
-                <span className="block text-sm uppercase tracking-wider">
-                  {navItem.name}
-                </span>
-              </motion.div>
-              <motion.div
-                className="absolute bottom-0 left-0 h-px w-full opacity-0 transform translate-y-1"
-                initial={false}
-                whileHover={{
-                  opacity: 1,
-                  translateY: 0,
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut"
-                }}
-              >
-                <div className="h-full w-full cinematic-gradient" />
-              </motion.div>
-            </Link>
-          ))}
-        </div>
-      </motion.div>
+    <AnimatePresence>
+      {visible && (
+        <motion.nav
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.3 }}
+          className={cn(
+            'fixed top-0 inset-x-0 z-50 bg-black/80 backdrop-blur-sm',
+            className
+          )}
+        >
+          <div className="container mx-auto px-4 py-2">
+            <div className="flex items-center justify-between">
+              <Link href="#home" className="text-xl font-bold text-white hover:text-yellow-400 transition-colors">
+                Sabittwa.
+              </Link>
+              <div className="hidden md:flex space-x-4">
+                {navItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    onClick={(e) => handleClick(e, item.link)}
+                    className={cn(
+                      'text-sm uppercase tracking-wider transition-colors',
+                      activeSection === item.name.toLowerCase()
+                        ? 'text-yellow-400'
+                        : 'text-white hover:text-yellow-400'
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="flex md:hidden">
+                {navItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    onClick={(e) => handleClick(e, item.link)}
+                    className={cn(
+                      'p-2 transition-colors',
+                      activeSection === item.name.toLowerCase()
+                        ? 'text-yellow-400'
+                        : 'text-white hover:text-yellow-400'
+                    )}
+                  >
+                    {item.icon}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.nav>
+      )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
