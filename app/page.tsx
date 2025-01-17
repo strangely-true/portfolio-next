@@ -114,8 +114,9 @@ export default function Home() {
         <section id="projects">
         <ProjectSection />
         </section>
-
-      <ContactSection />
+        <section id="contact">
+        <ContactSection />
+        </section>
       
 
         <motion.div

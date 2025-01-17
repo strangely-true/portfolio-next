@@ -45,7 +45,7 @@ export function ProjectSection() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null)
 
   return (
-    <div className="relative min-h-screen text-white py-20">
+    <div className="relative min-h-screen text-white pt-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
         <div className="relative">

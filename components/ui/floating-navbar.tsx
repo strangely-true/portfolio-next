@@ -98,7 +98,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
         >
           <div className="container mx-auto px-4 py-5">
             <div className="flex items-center justify-between">
-              <Link href="#home" className="text-xl font-bold text-white hover:cinematic-gradient">
+              <Link href="#home" className="text-xl font-bold text-white hover:text-rose-600">
                 Sabittwa.
               </Link>
               <div className="hidden md:flex space-x-4">
@@ -110,7 +110,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
                     className={cn(
                       'text-sm uppercase tracking-wider transition-colors',
                       activeSection === item.name.toLowerCase()
-                        ? 'cinematic-gradient'
+                        ? 'text-rose-500'
                         : 'text-white hover:cinematic-gradient'
                     )}
                   >
@@ -127,8 +127,8 @@ export const FloatingNav = ({ className }: { className?: string }) => {
                     className={cn(
                       'p-2 transition-colors',
                       activeSection === item.name.toLowerCase()
-                        ? 'text-yellow-400'
-                        : 'text-white hover:text-yellow-400'
+                        ? 'text-rose-600'
+                        : 'text-white hover:text-rose-600'
                     )}
                   >
                     {item.icon}
