@@ -9,10 +9,14 @@ export default {
   ],
   theme: {
   	extend: {
+		
 		fontFamily: {
 			sorren: ['Sorren', 'sans-serif'],
+			heading: 'Object Sans',
+			body: 'Object Sans',
 		  },
 		  fontWeight: {
+			normal: '400',
 			medium: '500',
 			semibold: '600',
 			bold: '700',

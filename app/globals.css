@@ -1,4 +1,3 @@
-@import url('https://api.fontshare.com/v2/css?f[ ]=object-sans@400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
@@ -151,4 +150,17 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: 'ObjectSans-heavy';
+  src: url('/fonts/ObjectSans-Heavy.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ObjectSans-regular';
+  src: url('/fonts/ObjectSans-Regular.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
 }
