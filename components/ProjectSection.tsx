@@ -18,26 +18,26 @@ const projects: Project[] = [
   { 
     id: '1', 
     name: 'Coordina', 
-    color: '#FF6B6B', 
-    image: '/coordina.png', 
-    link: '#projects',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    color: '#321353', // Dark purple color
+    image: '/coordina.png',
+    link: 'https://coordina-murex.vercel.app/',
+    description: 'A Smart India Hackathon project focusing on user-friendly dashboard interfaces for government departments. Developed using Next.js, React.js, and MongoDB.'
   },
   { 
     id: '2', 
     name: 'MealMetric', 
-    color: '#4ECDC4', 
-    image: '/mealmetric.png', 
-    link: '#projects',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    color: '#06402B', // Dark purple color
+    image: '/mealmetric.png',
+    link: 'https://github.com/strangely-true/MealMetric',
+    description: 'A dynamic web application to calculate nutritional information for meals based on user-inputted ingredients. Built with Node.js, Express.js, PostgreSQL, and EJS.'
   },
   { 
     id: '3', 
-    name: 'Chat App', 
-    color: '#45B7D1', 
-    image: '/chat-app.png', 
-    link: '#projects',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+    name: 'Real-Time Chat Application', 
+    color: '#085548', // Dark purple color
+    image: '/chat-app.png',
+    link: 'https://github.com/strangely-true/Chat-app',
+    description: 'A full-stack real-time chat application with type-safe messaging and user authentication. Built using Next.js, React.js, Convex DB, and Clerk.'
   }
 ]
 
@@ -70,7 +70,7 @@ export function ProjectSection() {
                   <span className="text-3xl font-medium">{project.name}</span>
                   <span className="text-xl">0{index + 1}</span>
                 </div>
-                <p className="text-lg text-white/50 max-w-2xl">{project.description}</p>
+                <p className="text-lg text-white/70 max-w-2xl">{project.description}</p>
               </motion.div>
               <motion.div
                 className="absolute inset-0 flex items-center justify-between p-8"
@@ -92,7 +92,7 @@ export function ProjectSection() {
                     <ArrowUpRight size={32} />
                     <span className="hover:underline">View Project</span>
                   </motion.div>
-                  <p className="text-lg text-white/70 max-w-lg">{project.description}</p>
+                  <p className="text-lg text-white max-w-lg">{project.description}</p>
                 </motion.div>
                 <motion.div
                   className="relative w-96 h-56"

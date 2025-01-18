@@ -62,35 +62,35 @@ export default function CustomCursor() {
           }}
         />
         <div className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent" />
-        <StarTrail />
+        {/* <StarTrail /> */}
       </motion.div>
       
     </div>
   )
 }
 
-function StarTrail() {
-  return (
-    <>
-      {[...Array(5)].map((_, index) => (
-        <motion.div
-          key={index}
-          className="absolute left-1/2 top-1/2 h-0.5 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e0e0e0] opacity-50"
-          initial={{ scale: 0, x: 0, y: 0 }}
-          animate={{
-            scale: [1, 0],
-            x: Math.cos(index * Math.PI * 0.4) * 20,
-            y: Math.sin(index * Math.PI * 0.4) * 20,
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            delay: index * 0.2,
-          }}
-        />
-      ))}
-    </>
-  )
-}
+// function StarTrail() {
+//   return (
+//     <>
+//       {[...Array(5)].map((_, index) => (
+//         <motion.div
+//           key={index}
+//           className="absolute left-1/2 top-1/2 h-0.5 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e0e0e0] opacity-50"
+//           initial={{ scale: 0, x: 0, y: 0 }}
+//           animate={{
+//             scale: [1, 0],
+//             x: Math.cos(index * Math.PI * 0.4) * 20,
+//             y: Math.sin(index * Math.PI * 0.4) * 20,
+//           }}
+//           transition={{
+//             duration: 1,
+//             repeat: Infinity,
+//             repeatType: 'reverse',
+//             delay: index * 0.2,
+//           }}
+//         />
+//       ))}
+//     </>
+//   )
+// }
 

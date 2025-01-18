@@ -154,13 +154,13 @@
 @font-face {
   font-family: 'Object Sans';
   src: url('/fonts/ObjectSans-Heavy.otf') format('opentype');
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Object Sans';
   src: url('/fonts/ObjectSans-Regular.otf') format('opentype');
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 }

@@ -96,11 +96,12 @@ export const FloatingNav = ({ className }: { className?: string }) => {
             className
           )}
         >
-          <div className="container mx-auto px-4 py-5">
+          <div className="container mx-auto px-4 pt-2 pb-5">
             <div className="flex items-center justify-between">
-              <Link href="#home" className="text-xl font-bold text-white hover:text-rose-600">
-                Sabittwa.
-              </Link>
+                <Link href="#home" className="text-xl font-bold text-white hover:text-rose-600 flex items-center space-x-2">
+                <img src="/logo.png" alt="Logo" className="h-15 w-12 invert" />
+                <span className="hidden md:inline">Sabittwa.</span>
+                </Link>
               <div className="hidden md:flex space-x-4">
                 {navItems.map((item, index) => (
                   <Link
@@ -110,8 +111,8 @@ export const FloatingNav = ({ className }: { className?: string }) => {
                     className={cn(
                       'text-sm uppercase tracking-wider transition-colors',
                       activeSection === item.name.toLowerCase()
-                        ? 'text-rose-500'
-                        : 'text-white hover:cinematic-gradient'
+                        ? 'text-rose-500 font-bold'
+                        : 'text-white font-bold hover:cinematic-gradient'
                     )}
                   >
                     {item.name}
