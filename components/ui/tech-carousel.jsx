@@ -1,7 +1,10 @@
 "use client"
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import "@splidejs/splide/dist/css/splide.min.css";
 
 const logos = [
     { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', alt: 'Python' },
@@ -22,40 +25,47 @@ const logos = [
     { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', alt: 'VS Code' },
     { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', alt: 'Bootstrap' },
     { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', alt: 'Tailwind CSS' },
-]
+];
 
 const duplicatedLogos = [...logos, ...logos];
 
 export function TechCarousel() {
-
-  return (
-    <div className="relative w-full overflow-hidden">
-    <motion.div
-      className="flex"
-      animate={{
-        x: ['0%', '-100%'],
-      }}
-      transition={{
-        x: {
-          repeat: Infinity,
-          repeatType: 'loop',
-          duration: 20,
-          ease: 'linear',
-          repeatDelay: 0,
-        },
-      }}
-    >
-      {[...Array(2)].map((_, index) => (
-        <div key={index} className="flex py-20 space-x-16 px-8">
-          {duplicatedLogos.map((logo, logoIndex) => (
-            <div key={logoIndex} className="w-20 h-20 flex items-center justify-center">
-              <Image src={logo.src} alt={logo.alt} width={80} height={80} />
-            </div>
-          ))}
+    return (
+        <div className="relative w-full overflow-hidden">
+            <Splide
+                options={{
+                    type: "loop",
+                    drag: "free",
+                    focus: "center",
+                    perPage: 5,
+                    autoWidth: true,
+                    gap: '4rem',
+                    arrows: false,
+                    pagination: false,
+                    autoScroll: {
+                        pauseOnHover: false,
+                        pauseOnFocus: false,
+                        rewind: false,
+                        speed: 1
+                    },
+                }}
+                extensions={{ AutoScroll }}
+            >
+                {duplicatedLogos.map((logo, index) => (
+                    <SplideSlide key={index}>
+                        <div className="w-20 h-20 flex items-center justify-center">
+                            <Image 
+                                src={logo.src || "/placeholder.svg"} 
+                                alt={logo.alt} 
+                                width={80} 
+                                height={80} 
+                                className="object-contain"
+                            />
+                        </div>
+                    </SplideSlide>
+                ))}
+            </Splide>
         </div>
-      ))}
-    </motion.div>
-    </div>
-  )
+    );
 }
 
