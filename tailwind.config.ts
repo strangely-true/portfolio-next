@@ -14,6 +14,7 @@ export default {
 			sorren: ['Sorren', 'sans-serif'],
 			heading: 'Object Sans',
 			body: 'Object Sans',
+			"object-sans": ['Object Sans', 'sans-serif'],
 		  },
 		  fontWeight: {
 			normal: '400',

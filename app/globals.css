@@ -152,14 +152,14 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'ObjectSans-heavy';
+  font-family: 'Object Sans';
   src: url('/fonts/ObjectSans-Heavy.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ObjectSans-regular';
+  font-family: 'Object Sans';
   src: url('/fonts/ObjectSans-Regular.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
