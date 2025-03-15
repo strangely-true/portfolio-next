@@ -23,7 +23,6 @@ const greetings = [
   { language: 'Assamese', text: 'নমস্কাৰ' },
   { language: 'Urdu', text: 'سلام' },
   { language: 'Portuguese', text: 'Olá' },
-  { language: 'Russian', text: 'Здравствуйте' },
   { language: 'Korean', text: '안녕하세요' },
   { language: 'German', text: 'Hallo' },
   { language: 'Arabic', text: 'مرحبا' },

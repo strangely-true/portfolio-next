@@ -25,16 +25,24 @@ const projects: Project[] = [
   },
   { 
     id: '2', 
+    name: 'Github Diary', 
+    color: '#014D4E', // Blue 
+    image: '/github-diary.png',
+    link: 'https://marketplace.visualstudio.com/items?itemName=strangely-true.github-diary',
+    description: 'Never lose track of your coding progress. Git Diary automatically records your development activity in a private GitHub repository, creating a detailed, timestamped journal of your work.'
+  },
+  { 
+    id: '3', 
     name: 'MealMetric', 
-    color: '#06402B', // Dark purple color
+    color: '#06402B', 
     image: '/mealmetric.png',
     link: 'https://github.com/strangely-true/MealMetric',
     description: 'A dynamic web application to calculate nutritional information for meals based on user-inputted ingredients. Built with Node.js, Express.js, PostgreSQL, and EJS.'
   },
   { 
-    id: '3', 
+    id: '4', 
     name: 'Real-Time Chat Application', 
-    color: '#085548', // Dark purple color
+    color: '#085548', 
     image: '/chat-app.png',
     link: 'https://github.com/strangely-true/Chat-app',
     description: 'A full-stack real-time chat application with type-safe messaging and user authentication. Built using Next.js, React.js, Convex DB, and Clerk.'
