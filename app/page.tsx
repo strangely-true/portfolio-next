@@ -13,38 +13,46 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const onLoad = () => setIsLoading(false)
-    if (document.readyState === 'complete') {
-      onLoad()
-    } else {
-      window.addEventListener('load', onLoad)
-      return () => window.removeEventListener('load', onLoad)
-    }
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 3400)
+
+    return () => clearTimeout(timer)
   }, [])
 
   if (isLoading) {
-    return <Loader />
+    return (
+      <Loader />
+    )
   }
 
   return (
     <>
-      <FloatingNav />
+      <FloatingNav/>
+      
       <main className="overflow-hidden">
-        <section id="home">
+      <section id="home">
           <HeroSection />
         </section>
+
         <section id="about">
           <ScrollRevealText />
         </section>
+        {/* <HeroParallax products={products} /> */}
         <CounterSection />
         <TechCarousel />
+
         <section id="projects">
-          <ProjectSection />
+        <ProjectSection />
         </section>
         <section id="contact">
-          <ContactSection />
+        <ContactSection />
         </section>
+      
       </main>
     </>
   )
 }
+
+

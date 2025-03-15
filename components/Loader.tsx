@@ -58,9 +58,25 @@ const StarField = ({ count = 100 }) => {
 }
 
 const Constellation = () => {
-  const points = [
-    { x: 30, y: 50 }, { x: 70, y: 30 }, { x: 110, y: 60 },
-    { x: 150, y: 40 }, { x: 190, y: 70 }
+   const points = [
+    // Letter 'S'
+    { x: 40, y: 30 },   // Start of S top curve
+    { x: 60, y: 20 },   // Top curve peak
+    { x: 80, y: 30 },   // S mid-top
+    { x: 60, y: 50 },   // S center dip
+    { x: 40, y: 60 },   // S mid-bottom
+    { x: 60, y: 70 },   // Bottom curve peak
+    { x: 80, y: 60 },   // End of S bottom curve
+    
+    // Letter 'B'
+    { x: 110, y: 20 },  // B top vertical
+    { x: 110, y: 80 },  // B bottom vertical
+    { x: 140, y: 20 },  // B top curve start
+    { x: 160, y: 35 },  // B top curve peak
+    { x: 140, y: 50 },  // B mid connection
+    { x: 160, y: 65 },  // B bottom curve peak
+    { x: 140, y: 80 },  // B bottom curve end
+    { x: 110, y: 50 },  // B middle connection
   ]
 
   return (
@@ -141,36 +157,6 @@ export default function Loader() {
               animate={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.8, delay: 2 }}
             >
-              <motion.h1
-                className="text-5xl font-light tracking-tighter text-gray-950"
-                initial={{ opacity: 0, letterSpacing: "0.1em" }}
-                animate={{ 
-                  opacity: 1,
-                  letterSpacing: "0.02em",
-                  transition: {
-                    opacity: { duration: 0.6, delay: 0.3 },
-                    letterSpacing: { duration: 1.2, delay: 0.3 },
-                  }
-                }}
-              >
-                SABITTWA BANERJEE
-              </motion.h1>
-              
-              <motion.p
-                className="mt-4 text-xl tracking-wide text-gray-600"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { 
-                    duration: 0.6, 
-                    delay: 0.6,
-                    ease: "backOut"
-                  }
-                }}
-              >
-                WEB DEVELOPER & DESIGNER
-              </motion.p>
             </motion.div>
           </div>
         </motion.div>
