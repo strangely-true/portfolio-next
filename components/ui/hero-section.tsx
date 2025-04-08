@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
                     <div className="relative hidden lg:block">
                         <div className="relative w-[400px] h-[500px] mx-auto">
                             <Image
-                                src="/DSC09490.jpg"
+                                src="/SabittwaGhibli.png"
                                 alt="Sabittwa Banerjee"
                                 fill
                                 className="object-cover rounded-2xl"
