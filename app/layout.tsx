@@ -5,6 +5,8 @@ import { StarsBackground } from '@/components/ui/stars-background'
 import CustomCursor from '@/components/ui/custom-cursor'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import { Toaster } from '@/components/ui/toaster'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 // import Loader from '@/components/Loader'
 
@@ -30,6 +32,8 @@ export default function RootLayout({
         {children}
         </SmoothScroll>
         <Toaster />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
