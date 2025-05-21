@@ -17,6 +17,14 @@ interface Project {
 const projects: Project[] = [
   { 
     id: '1', 
+    name: 'TruthScope', 
+    color: '#A23B5A', // Dark pastel red color
+    image: '/truthscope.png',
+    link: 'https://github.com/sujayx07/TruthScope',
+    description: 'A chrome extension that detects fake news and misinformation using AI. It uses sentiment analysis and LLMs to analyze the content and provide a credibility score. Built with JS, Gemini SDK, Manifest V3.'
+  },
+  { 
+    id: '2', 
     name: 'Coordina', 
     color: '#321353', // Dark purple color
     image: '/coordina.png',
@@ -24,7 +32,7 @@ const projects: Project[] = [
     description: 'A Smart India Hackathon project focusing on user-friendly dashboard interfaces for government departments. Developed using Next.js, React.js, and MongoDB.'
   },
   { 
-    id: '2', 
+    id: '3', 
     name: 'Github Diary', 
     color: '#014D4E', // Blue 
     image: '/github-diary.png',
@@ -32,7 +40,7 @@ const projects: Project[] = [
     description: 'Never lose track of your coding progress. Git Diary automatically records your development activity in a private GitHub repository, creating a detailed, timestamped journal of your work.'
   },
   { 
-    id: '3', 
+    id: '4', 
     name: 'MealMetric', 
     color: '#06402B', 
     image: '/mealmetric.png',
@@ -40,7 +48,7 @@ const projects: Project[] = [
     description: 'A dynamic web application to calculate nutritional information for meals based on user-inputted ingredients. Built with Node.js, Express.js, PostgreSQL, and EJS.'
   },
   { 
-    id: '4', 
+    id: '5', 
     name: 'Real-Time Chat Application', 
     color: '#085548', 
     image: '/chat-app.png',
