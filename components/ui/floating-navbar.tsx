@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import Image from 'next/image'
 import { IconHome, IconUser, IconMessage, IconBriefcase } from '@tabler/icons-react'
 import { useLenis } from 'lenis/react'
 
@@ -99,8 +100,8 @@ export const FloatingNav = ({ className }: { className?: string }) => {
           <div className="container mx-auto px-4 pt-2 pb-5">
             <div className="flex items-center justify-between">
                 <Link href="#home" className="text-xl font-bold text-white hover:text-rose-600 flex items-center space-x-2">
-                <img src="/logo.png" alt="Logo" className="h-15 w-12 invert" />
-                <span className="hidden md:inline">Sabittwa.</span>
+                  <Image src="/logo.png" alt="Logo" width={48} height={60} className="invert" />
+                  <span className="hidden md:inline">Sabittwa.</span>
                 </Link>
               <div className="hidden md:flex space-x-4">
                 {navItems.map((item, index) => (
