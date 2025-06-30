@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="antialiased min-h-screen bg-gray-950 text-white">
       <CustomCursor/>
-        <div className="fixed inset-0 z-0">
+        <div className="fixed inset-0 z-0 pointer-events-none">
           <ShootingStars />
           <StarsBackground />
         </div>
