@@ -52,6 +52,90 @@
   .mask-fade-out {
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  }
+  
+  .custom-shadow {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+
+  /* Prose styling for blog content */
+  .prose {
+    color: rgb(229 231 235);
+    max-width: none;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: rgb(255 255 255);
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  
+  .prose code {
+    background-color: rgb(55 65 81);
+    color: rgb(229 231 235);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+  }
+  
+  .prose pre {
+    background-color: rgb(17 24 39);
+    border: 1px solid rgb(55 65 81);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .prose ul, .prose ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose blockquote {
+    border-left: 4px solid rgb(244 63 94);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: rgb(156 163 175);
+    font-style: italic;
+  }
+  
+  .prose a {
+    color: rgb(244 63 94);
+    text-decoration: underline;
+  }
+  
+  .prose a:hover {
+    color: rgb(251 113 133);
+  }
 }
 
 .font-object-sans {
