@@ -8,7 +8,7 @@ const ResponsiveLayoutsPost = () => {
 
   const post = {
     title: 'Building Responsive Layouts with Flexbox and Grid',
-    date: 'December 5, 2024',
+    date: 'July 1, 2025',
     readTime: 10,
     tags: ['CSS', 'Responsive Design', 'Flexbox', 'Grid'],
     author: 'Sabittwa Banerjee',

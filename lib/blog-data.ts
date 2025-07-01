@@ -14,20 +14,20 @@ export const blogPosts: BlogPost[] = [
     slug: 'getting-started-with-nextjs-14',
     title: 'Getting Started with Next.js 14: A Complete Guide',
     excerpt: 'Learn how to build modern web applications with Next.js 14, including server components, app router, and the latest features.',
-    date: 'December 15, 2024',
+    date: 'July 1, 2025',
     readTime: 8,
     tags: ['Next.js', 'React', 'JavaScript', 'Web Development'],
-    author: 'Sabittwa Banerjee',
-    featured: true
+    author: 'Sabittwa Banerjee'
   },
   {
     slug: 'mastering-tailwind-css',
     title: 'Mastering Tailwind CSS: Tips and Tricks',
     excerpt: 'Discover advanced Tailwind CSS techniques, custom configurations, and best practices for building beautiful interfaces.',
-    date: 'December 10, 2024',
-    readTime: 6,
+    date: 'July 1, 2025',
+    readTime: 25,
     tags: ['CSS', 'Tailwind', 'Design', 'Frontend'],
-    author: 'Sabittwa Banerjee'
+    author: 'Sabittwa Banerjee',
+    featured: true
   },
   {
     slug: 'building-responsive-layouts',

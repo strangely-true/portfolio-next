@@ -317,7 +317,7 @@ export default function TailwindGuidePost() {
   // Blog post metadata
   const post = {
     title: 'Mastering Tailwind CSS: Advanced Techniques & Interactive Guide',
-    date: 'January 15, 2025',
+    date: 'July 1, 2025',
     readTime: 25,
     tags: ['Tailwind CSS', 'CSS', 'Web Development', 'Frontend', 'Interactive Tutorial', 'Advanced Techniques'],
     author: 'Sabittwa Banerjee'

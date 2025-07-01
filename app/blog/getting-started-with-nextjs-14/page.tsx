@@ -82,7 +82,7 @@ const NextJSGuidePost = () => {
 
   const post = {
     title: 'Getting Started with Next.js 14: A Complete Interactive Guide',
-    date: 'December 15, 2024',
+    date: 'July 1, 2025',
     readTime: 12,
     tags: ['Next.js', 'React', 'JavaScript', 'Web Development', 'Interactive Tutorial'],
     author: 'Sabittwa Banerjee'
