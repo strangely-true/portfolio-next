@@ -1,56 +1,22 @@
 "use client"
 
 import React from 'react'
-import Image from 'next/image'
-import { BlogPostLayout, CodeBlock } from '@/components/ui/blog-post-layout'
+import { BlogPostLayout } from '@/components/ui/blog-post-layout'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from "@/components/ui/button";
+import Image from 'next/image';
+import FoolQuote from "@/components/ui/fool-quote";
+import JargonBuster from '@/components/ui/jargon-buster';
 
 const FoolsJourneyPost = () => {
   const post = {
     title: "A Fool\'s Journey into Deep Learning: Part 1",
     date: 'July 2, 2025',
     readTime: 15,
-    tags: ['Deep Learning', 'AI', 'Machine Learning', 'Neural Networks', 'Personal Journey'],
+    tags: ['Deep Learning', 'Journey'],
     author: 'Sabittwa Banerjee'
   }
 
-  const mnistCode = `
-import torch
-import torch.nn as nn
-from torchvision import datasets, transforms
-
-# Define a simple neural network
-class SimpleNet(nn.Module):
-    def __init__(self):
-        super(SimpleNet, self).__init__()
-        self.fc1 = nn.Linear(28 * 28, 128)
-        self.fc2 = nn.Linear(128, 10)
-
-    def forward(self, x):
-        x = x.view(-1, 28 * 28)
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
-
-# Load the MNIST dataset
-transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
-trainset = datasets.MNIST('~/.pytorch/MNIST_data/', download=True, train=True, transform=transform)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
-
-# Instantiate the model, loss function, and optimizer
-model = SimpleNet()
-criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
-
-# Training loop (simplified)
-for images, labels in trainloader:
-    optimizer.zero_grad()
-    output = model(images)
-    loss = criterion(output, labels)
-    loss.backward()
-    optimizer.step()
-
-print("Training finished!")
-`
 
   return (
     <BlogPostLayout post={post}>
@@ -58,73 +24,277 @@ print("Training finished!")
         {/* Introduction */}
         <section>
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
-            Embarking on the path of deep learning can feel like stepping into a new world, full of complex jargon, mathematical mysteries, and endless possibilities. It&apos;s a journey that mirrors the classic Tarot archetype of The Fool: taking a leap of faith into the unknown, armed with little more than curiosity and a desire to learn. This post chronicles my own &quot;Fool&apos;s Journey&quot; into the depths of neural networks, from initial confusion to the first glimmers of understanding.
+            You might be wondering why I&apos;m writing this blog. I&apos;m not an expert in deep learning, or much else for that matter. So, why start a blog? It might not seem to make sense at first glance.
+          </p>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            Honestly, the main reason is that I&apos;ve found teaching and writing about topics to be incredibly beneficial for my own learning and memory retention. I find that I grasp concepts more easily when I have to explain them to someone else.
+          </p>
+
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            So, here I am, documenting my journey. I plan for this to be a continuing series, and it probably won&apos;t be limited to just deep learning. I&apos;ve also heard that a blog can be more impactful than a resume, as it showcases my learning process and provides tangible proof of my work.
           </p>
         </section>
 
-        {/* The First Step: Hello World of DL */}
+        {/* Misconceptions */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-white">The First Step: The &quot;Hello, World!&quot; of Deep Learning</h2>
-          <p className="text-gray-300 mb-4">
-            Every programming journey begins with a &quot;Hello, World!&quot;. In deep learning, the equivalent is often classifying handwritten digits from the MNIST dataset. It&apos;s a simple task, but it introduces fundamental concepts like neural networks, tensors, and training loops.
-          </p>
-          <CodeBlock
-            code={mnistCode}
-            language="python"
-            filename="mnist_example.py"
-          />
-        </section>
-
-        {/* The Wilderness of Hyperparameters */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-white">The Wilderness of Hyperparameters</h2>
-          <p className="text-gray-300 mb-4">
-            After the initial success, I wandered into the &quot;Wilderness of Hyperparameters.&quot; Learning rate, batch size, number of layers, activation functions... the choices seemed endless. Like The Fool encountering new characters who offer conflicting advice, I found countless articles and papers suggesting different approaches.
-          </p>
-          <p className="text-gray-300 mb-4">
-            There&apos;s no magic formula. The key, I learned, is experimentation and intuition, guided by a solid understanding of what each hyperparameter does. Tools like TensorBoard became my trusted companions, helping me visualize the impact of my choices.
-          </p>
-        </section>
-
-        {/* The Tower Moment: Overfitting */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6 text-white">The Tower Moment: Encountering Overfitting</h2>
-          <p className="text-gray-300 mb-4">
-            My &quot;Tower moment&quot; came when I built a model that achieved 99% accuracy on my training data, but performed poorly on data it had never seen before. This is the classic problem of overfitting. My model had memorized the training examples instead of learning the underlying patterns.
-          </p>
-          <div className="my-6">
-            <Image
-              src="/SabittwaGhibli.png" 
-              alt="A diagram showing overfitting"
-              width={800}
-              height={400}
-              className="rounded-lg mx-auto"
-            />
-            <p className="text-center text-sm text-gray-500 mt-2">A visual representation of a model that is too complex for the data.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">Misconceptions I Had</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="bg-gray-900/50 border-gray-800">
+              <CardHeader>
+                <CardTitle className="text-rose-500">Math is a Must</CardTitle>
+              </CardHeader>
+              <CardContent className="text-gray-300">
+                This was debunked when I started reading up and asking people. Basic high school math is enough, especially if you have calculus. You can look up Linear Algebra and Statistics as you go. I would highly recommend the courses by Khan Academy and 3blue1brown&apos;s YouTube playlists.
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-900/50 border-gray-800">
+              <CardHeader>
+                <CardTitle className="text-rose-500">No Money, High Cost</CardTitle>
+              </CardHeader>
+              <CardContent className="text-gray-300">
+                This is also not true. The bar for entry is very low nowadays, and hundreds of thousands of students are getting into deep learning because it has so many applications. Neural nets are the foundation of LLMs, which are all the craze now.
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-900/50 border-gray-800">
+              <CardHeader>
+                <CardTitle className="text-rose-500">PhD Required</CardTitle>
+              </CardHeader>
+              <CardContent className="text-gray-300">
+                I&apos;m not confident about this, but I definitely know people like Sayak Paul who are doing great in this field without a PhD.
+              </CardContent>
+            </Card>
           </div>
-          <p className="text-gray-300 mb-4">
-            This was a moment of crisis and revelation. I had to tear down my assumptions and learn about regularization techniques like Dropout and L2 regularization, which are designed to prevent overfitting and help models generalize better.
+        </section>
+
+        {/* Prerequisites */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">The Only Prerequisite</h2>
+          <Card className="bg-gray-900/50 border-gray-800">
+            <CardContent className="pt-6">
+                <div className="flex items-center gap-4">
+                    <Image
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                        alt="Python"
+                        width={48}
+                        height={48}
+                        className="flex-shrink-0"
+                    />
+                    <div>
+                        <p className="text-xl text-gray-300 leading-relaxed">
+                            The only real prerequisite is knowing how to program in Python.
+                        </p>
+                        <Button asChild className="mt-2">
+                            <a href="https://www.python.org/about/gettingstarted/" target="_blank" rel="noopener noreferrer">
+                                Learn Python
+                            </a>
+                        </Button>
+                    </div>
+                </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Asking Questions */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">The Power of Asking Foolish Questions</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            A great help that I got was from emailing and contacting various people in my field. I never shy away from asking foolish questions—hence the name &quot;A Fool’s Journey.&quot; I asked every single doubt I could to ChatGPT or Gemini, and when I wasn&apos;t satisfied, I emailed professionals.
+          </p>
+          <Card className="bg-red-900/30 border-red-500/50">
+            <CardHeader>
+                <CardTitle className="text-red-500 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                    Warning
+                </CardTitle>
+            </CardHeader>
+            <CardContent className="text-red-300">
+                Professionals are very busy, and disturbing them is a really bad idea. I ask them politely to merely point me in the right direction when I have a genuine doubt.
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Email Example */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">A Real Example</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            Here&apos;s an actual email exchange I had with Sayak Paul, showing how professionals in the field are willing to help when approached respectfully:
+          </p>
+          
+          <Card className="bg-white border-gray-300 text-black max-w-4xl mx-auto">
+            <CardContent className="p-0">
+              {/* Gmail Header */}
+              <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="https://sayak.dev/posts/carted_headshot.jpg" 
+                    alt="Sayak Paul" 
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full"
+                  />
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-black">Sayak Paul</span>
+                    </div>
+                    <div className="text-sm text-gray-600">to me</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="text-sm text-gray-600">Sun 29 Jun, 18:46 (3 days ago)</span>
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.915a1 1 0 00.95-.69l1.519-4.674z" />
+                    </svg>
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                    </svg>
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Email Content */}
+              <div className="p-6 ">
+                <div className="mb-4">
+                  <a href="https://bit.ly/sayak-faqs" className="text-blue-600 hover:underline">bit.ly/sayak-faqs</a>
+                  <span className="text-gray-600 ml-2">might help.</span>
+                </div>
+
+                <div className="pt-4 border-t border-gray-200">
+                  <div className="text-sm text-gray-600 mb-2">
+                    Sayak Paul | <a href="https://sayak.dev" className="text-blue-600 hover:underline">sayak.dev</a>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Resources */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">A Note on Resources</h2>
+          <p className="text-xl text-gray-300 leading-relaxed">
+            I will provide the resources after I finish a few of them myself, because I am not qualified to guide anyone just yet—at least not until I have finished a resource (book, course) myself.
           </p>
         </section>
 
-        {/* The Star: Finding the Right Architecture */}
+        {/* Jupyter Notebooks */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-white">The Star: Finding the Right Architecture</h2>
-          <p className="text-gray-300 mb-4">
-            After the setback of overfitting, I found hope in exploring different neural network architectures. I learned about Convolutional Neural Networks (CNNs) for image data and Recurrent Neural Networks (RNNs) for sequential data. It was like looking up at the stars and seeing a map of the possibilities.
+          <h2 className="text-3xl font-bold text-white mb-4">On Jupyter Notebooks</h2>
+          <FoolQuote>
+            I thought Jupyter notebooks were stupid when I first got to know about them. Why not just run the models on my own PC?
+          </FoolQuote>
+          <p className="text-xl text-gray-300 leading-relaxed mt-6 mb-6">
+            Turns out, Jupyter is one of the most useful pieces of software there is. It received the highest honor in software, the ACM System Award, and it is the most widely used piece of software for deep learning and data science.
           </p>
-          <p className="text-gray-300 mb-4">
-            This is where the journey becomes more creative. Choosing and designing an architecture is as much an art as a science. It&apos;s about understanding the structure of your data and matching it with a network that can effectively learn from it.
+
+          <Card className="bg-gray-900/50 border-gray-800">
+            <CardContent className="pt-6">
+                <div className="flex items-center gap-4">
+                    <Image
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
+                        alt="Jupyter"
+                        width={48}
+                        height={48}
+                        className="flex-shrink-0 bg-white rounded-full p-1"
+                    />
+                    <div>
+                        <p className="text-xl text-gray-300 leading-relaxed">
+                            Jupyter Notebooks provide an interactive environment to write and run code, visualize data, and share your work. They are perfect for data exploration and experimentation.
+                        </p>
+                        <Button asChild className="mt-2">
+                            <a href="https://jupyter.org/try" target="_blank" rel="noopener noreferrer">
+                                Try Jupyter
+                            </a>
+                        </Button>
+                    </div>
+                </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* What is ML? */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">What is Machine Learning, Anyway?</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            Think of it like this: instead of writing explicit, step-by-step instructions for a computer to solve a problem, you give it a lot of examples and let it figure out the rules on its own. It&apos;s like teaching a child to recognize a cat by showing them pictures of cats, rather than describing a cat in minute detail.
           </p>
         </section>
 
-        {/* The World: A Never-Ending Journey */}
+        {/* What is a Neural Network? */}
         <section>
-          <h2 className="text-3xl font-bold mb-6 text-white">The World: A Never-Ending Journey</h2>
-          <p className="text-gray-300 leading-relaxed mb-4">
-            Reaching &quot;The World&quot; in this journey doesn&apos;t mean I&apos;ve mastered everything. On the contrary, it&apos;s a realization that this field is constantly evolving. The journey of learning is cyclical. With every new project, I feel like The Fool again, stepping into a new domain with fresh eyes and renewed curiosity. And that, I&apos;ve come to believe, is the most exciting part of the adventure.
+          <h2 className="text-3xl font-bold text-white mb-4">And a Neural Network?</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            A Neural Network is a specific type of machine learning model that&apos;s loosely inspired by the human brain. It has interconnected nodes, or “neurons,” that work together to find patterns in data. Deep Learning just means using a really big, complex neural network with many layers.
+          </p>
+          <FoolQuote>
+            It&apos;s like a team of tiny robots in your computer, each looking for one very specific thing. When they all raise their hands at the same time, they&apos;ve found a pattern!
+          </FoolQuote>
+        </section>
+
+        {/* Jargon Buster */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">Jargon Buster</h2>
+          <Card className="bg-gray-900/50 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-rose-500">Key Terms</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-gray-300">
+              <p><strong>Model:</strong> The “brain” that you train. It’s the output of the training process and what you use to make predictions.</p>
+              <p><strong>Training:</strong> The process of teaching the model by showing it data. The model adjusts its internal parameters to make better predictions.</p>
+              <p><strong>Inference:</strong> Using the trained model to make predictions on new, unseen data.</p>
+              <p className='text-yellow-400'>I will not manually put a Jargon Buster in every post, however there will a mega Jargon Buster attached in places throughout the post where you can look up every jargon</p>
+            </CardContent>
+          </Card>
+        </section>
+        <JargonBuster></JargonBuster>
+        {/* Classification and Regression */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">Classification vs. Regression</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            Most of the problems you&apos;ll encounter in supervised learning fall into two categories:
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="bg-gray-900/50 border-gray-800">
+              <CardHeader>
+                <CardTitle className="text-rose-500">Classification</CardTitle>
+              </CardHeader>
+              <CardContent className="text-gray-300">
+                Predicting a category. Is this email spam or not spam? Is this picture a cat, a dog, or a bird?
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-900/50 border-gray-800">
+              <CardHeader>
+                <CardTitle className="text-rose-500">Regression</CardTitle>
+              </CardHeader>
+              <CardContent className="text-gray-300">
+                Predicting a continuous value. What will the temperature be tomorrow? How much will this house sell for?
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Overfitting */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">The Danger of Overfitting</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            Overfitting is a common trap. It’s when your model learns the training data *too* well, including the noise and quirks. It becomes like a student who memorizes the answers to a practice test but can&apos;t answer any questions on the real exam because they didn&apos;t learn the underlying concepts.
           </p>
         </section>
+
+        {/* Training and Validation Sets */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">Training and Validation Sets</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            To avoid overfitting, we split our data. We use the <strong>training set</strong> to teach the model, and the <strong>validation set</strong> to check its performance on data it hasn&apos;t seen before. This helps us see if the model is actually learning or just memorizing.
+          </p>
+        </section>
+
       </div>
     </BlogPostLayout>
   )
