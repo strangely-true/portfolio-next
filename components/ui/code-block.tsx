@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { IconCopy, IconCheck } from '@tabler/icons-react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface CodeBlockProps {
   code: string
@@ -28,7 +30,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language, filename }
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative group my-6 bg-gray-900 rounded-lg overflow-hidden border border-gray-800"
+      className="relative group my-6 bg-gray-900 rounded-lg overflow-hidden border border-gray-800 z-10"
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
@@ -65,12 +67,24 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language, filename }
       </div>
 
       {/* Code Content */}
-      <div className="overflow-x-auto">
-        <pre className="p-4 text-sm leading-relaxed">
-          <code className="text-gray-300 font-mono">
-            {code}
-          </code>
-        </pre>
+      <div className="overflow-x-auto text-base">
+        <SyntaxHighlighter
+          language={language}
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: '1rem',
+            backgroundColor: '#030712', // bg-gray-950
+            fontSize: '1rem',
+          }}
+          codeTagProps={{
+            style: {
+              fontFamily: 'var(--font-mono)',
+            },
+          }}
+        >
+          {code.trim()}
+        </SyntaxHighlighter>
       </div>
     </motion.div>
   )
@@ -96,7 +110,7 @@ export const InteractiveExample: React.FC<InteractiveExampleProps> = ({
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="my-8 bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden"
+      className="my-8 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden"
     >
       {/* Header */}
       <div className="px-6 py-4 border-b border-gray-800">

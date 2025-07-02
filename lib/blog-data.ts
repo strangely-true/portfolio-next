@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'fools-journey-deep-learning-1',
+    title: ' A Fool\'s Journey into Deep Learning: Part 1',
+    excerpt: 'Join me on a journey into Deep Learning, and be a fool.',
+    date: 'June 2, 2025',
+    readTime: 10,
+    tags: ['Deep Learning', 'AI', 'Data Ethics', 'Python'],
+    author: 'Sabittwa Banerjee'
+  },
+  {
     slug: 'getting-started-with-nextjs-14',
     title: 'Getting Started with Next.js 14: A Complete Guide',
     excerpt: 'Learn how to build modern web applications with Next.js 14, including server components, app router, and the latest features.',
@@ -27,15 +36,5 @@ export const blogPosts: BlogPost[] = [
     readTime: 25,
     tags: ['CSS', 'Tailwind', 'Design', 'Frontend'],
     author: 'Sabittwa Banerjee',
-    featured: true
-  },
-  {
-    slug: 'building-responsive-layouts',
-    title: 'Building Responsive Layouts with Flexbox and Grid',
-    excerpt: 'Master CSS Flexbox and Grid to create responsive, flexible layouts that work on all devices.',
-    date: 'December 5, 2024',
-    readTime: 10,
-    tags: ['CSS', 'Responsive Design', 'Flexbox', 'Grid'],
-    author: 'Sabittwa Banerjee'
   }
 ]
