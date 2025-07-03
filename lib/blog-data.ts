@@ -15,9 +15,10 @@ export const blogPosts: BlogPost[] = [
     title: ' A Fool\'s Journey into Deep Learning: Part 1',
     excerpt: 'Join me on a journey into Deep Learning, and be a fool.',
     date: 'June 2, 2025',
-    readTime: 10,
+    readTime: 15,
     tags: ['Deep Learning', 'AI', 'Data Ethics', 'Python'],
-    author: 'Sabittwa Banerjee'
+    author: 'Sabittwa Banerjee',
+    featured: true
   },
   {
     slug: 'getting-started-with-nextjs-14',
