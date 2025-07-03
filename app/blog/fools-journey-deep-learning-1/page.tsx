@@ -58,8 +58,25 @@ const FoolsJourneyPost = () => {
                 This was debunked when I started reading up and asking people.
                 Basic high school math is enough, especially if you have
                 calculus. You can look up Linear Algebra and Statistics as you
-                go. I would highly recommend the courses by Khan Academy and
-                3blue1brown&apos;s YouTube playlists.
+                go. I would highly recommend the courses by{" "}
+                <a
+                  href="https://www.khanacademy.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Khan Academy
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://www.3blue1brown.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  3blue1brown
+                </a>
+                &apos;s YouTube playlists.
               </CardContent>
             </Card>
             <Card className="bg-gray-900/50 border-gray-800">
@@ -81,7 +98,16 @@ const FoolsJourneyPost = () => {
               </CardHeader>
               <CardContent className="text-gray-300">
                 I&apos;m not confident about this, but I definitely know people
-                like Sayak Paul who are doing great in this field without a PhD.
+                like{" "}
+                <a
+                  href="https://sayak.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Sayak Paul
+                </a>{" "}
+                who are doing great in this field without a PhD.
               </CardContent>
             </Card>
           </div>
@@ -489,54 +515,96 @@ const FoolsJourneyPost = () => {
             For example, here is a time series:
           </p>
 
-          <div className="flex flex-col items-center my-8">
-            <Image
+            <div className="flex flex-col items-center my-8">
+            <div
+              style={{
+              background: "#fff",
+              borderRadius: "0.5rem",
+              width: "100%",
+              maxWidth: 600,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              boxShadow: "0 4px 24px 0 rgba(0,0,0,0.15)",
+              }}
+              className="overflow-hidden"
+            >
+              <Image
               src="https://raw.githubusercontent.com/fastai/fastbook/refs/heads/master/images/timeseries1.png"
               alt="A time series"
               width={600}
-              height={0}
+              height={400}
               style={{ height: "auto", width: "100%", maxWidth: 600 }}
-              className="rounded shadow-lg h-auto w-full max-w-[600px]"
-            />
+              className="h-auto w-full max-w-[600px]"
+              />
+            </div>
             <span className="text-gray-400 mt-2 italic">A time series</span>
-          </div>
-          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            </div>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
             Suppose we just use a random split of the data into training and
             validation sets. We end up with a horrible model because it is too
             easy to fill in the gaps.
-          </p>
-          <div className="flex flex-col items-center my-8">
-            <Image
+            </p>
+            <div className="flex flex-col items-center my-8">
+            <div
+              style={{
+              background: "#fff",
+              borderRadius: "0.5rem",
+              width: "100%",
+              maxWidth: 600,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              boxShadow: "0 4px 24px 0 rgba(0,0,0,0.15)",
+              }}
+              className="overflow-hidden"
+            >
+              <Image
               src="https://raw.githubusercontent.com/fastai/fastbook/refs/heads/master/images/timeseries2.png"
               alt="A poor subset"
               width={600}
-              height={0}
+              height={400}
               style={{ height: "auto", width: "100%", maxWidth: 600 }}
-              className="rounded shadow-lg h-auto w-full max-w-[600px]"
-            />
+              className="h-auto w-full max-w-[600px]"
+              />
+            </div>
             <span className="text-gray-400 mt-2 italic">
               A poor training subset
             </span>
-          </div>
-          <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            </div>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
             Instead, use the earlier data as your training set (and the later
             data for the validation set), as shown below. This way, the model
             has to learn to predict future values based on past data, which is
             the essence of time series forecasting.
-          </p>
-          <div className="flex flex-col items-center my-8">
-            <Image
+            </p>
+            <div className="flex flex-col items-center my-8">
+            <div
+              style={{
+              background: "#fff",
+              borderRadius: "0.5rem",
+              width: "100%",
+              maxWidth: 600,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              boxShadow: "0 4px 24px 0 rgba(0,0,0,0.15)",
+              }}
+              className="overflow-hidden"
+            >
+              <Image
               src="https://raw.githubusercontent.com/fastai/fastbook/refs/heads/master/images/timeseries3.png"
               alt="A good subset"
               width={600}
-              height={0}
+              height={400}
               style={{ height: "auto", width: "100%", maxWidth: 600 }}
-              className="rounded shadow-lg h-auto w-full max-w-[600px]"
-            />
+              className="h-auto w-full max-w-[600px]"
+              />
+            </div>
             <span className="text-gray-400 mt-2 italic">
               A good training subset
             </span>
-          </div>
+            </div>
 
           <p className="text-yellow-400 font-bold mt-6">
             This is a very important concept in time series forecasting, and it
