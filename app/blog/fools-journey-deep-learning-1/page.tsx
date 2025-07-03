@@ -143,7 +143,7 @@ const FoolsJourneyPost = () => {
             about them. Why not just run the models on my own PC?
           </FoolQuote>
           <p className="text-xl text-gray-300 leading-relaxed mt-6 mb-6">
-            Turns out, Jupyter is one of the most useful pieces of software
+            Turns out, Jupyter is one of the most useful piece of software
             there is. It received the highest honor in software, the ACM System
             Award, and it is the most widely used piece of software for deep
             learning and data science.
@@ -559,7 +559,7 @@ const FoolsJourneyPost = () => {
           <h2 className="text-3xl font-bold text-white mb-4">Conclusion</h2>
           <p className="text-xl text-gray-300 leading-relaxed">
             This is all I learned in the first week of my deep learning journey.
-            I hope this post has been helpful to you, it certainly has to me. If
+            I hope this post has been helpful to you, it certainly has been for me. If
             you read this far, I want to thank you for taking the time to read
             my thoughts and experiences. This is just the beginning of my
             journey into deep learning. I hope to share more insights and
