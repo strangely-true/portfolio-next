@@ -121,6 +121,64 @@ const FoolsJourneyPost = () => {
             </CardContent>
           </Card>
         </section>
+        {/* Resources */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            A Note on Resources
+          </h2>
+          <p className="text-xl text-gray-300 leading-relaxed">
+            I will provide the resources after I finish a few of them myself,
+            because I am not qualified to guide anyone just yet—at least not
+            until I have finished a resource (book, course) myself.
+          </p>
+        </section>
+
+        {/* Jupyter Notebooks */}
+        <section>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            On Jupyter Notebooks
+          </h2>
+          <FoolQuote>
+            I thought Jupyter notebooks were stupid when I first got to know
+            about them. Why not just run the models on my own PC?
+          </FoolQuote>
+          <p className="text-xl text-gray-300 leading-relaxed mt-6 mb-6">
+            Turns out, Jupyter is one of the most useful pieces of software
+            there is. It received the highest honor in software, the ACM System
+            Award, and it is the most widely used piece of software for deep
+            learning and data science.
+          </p>
+
+          <Card className="bg-gray-900/50 border-gray-800">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-4">
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
+                  alt="Jupyter"
+                  width={48}
+                  height={48}
+                  className="flex-shrink-0 bg-white rounded-full p-1"
+                />
+                <div>
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    Jupyter Notebooks provide an interactive environment to
+                    write and run code, visualize data, and share your work.
+                    They are perfect for data exploration and experimentation.
+                  </p>
+                  <Button asChild className="mt-2">
+                    <a
+                      href="https://jupyter.org/try"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Try Jupyter
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
 
         {/* Asking Questions */}
         <section>
@@ -277,65 +335,6 @@ const FoolsJourneyPost = () => {
                       sayak.dev
                     </a>
                   </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Resources */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-4">
-            A Note on Resources
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed">
-            I will provide the resources after I finish a few of them myself,
-            because I am not qualified to guide anyone just yet—at least not
-            until I have finished a resource (book, course) myself.
-          </p>
-        </section>
-
-        {/* Jupyter Notebooks */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-4">
-            On Jupyter Notebooks
-          </h2>
-          <FoolQuote>
-            I thought Jupyter notebooks were stupid when I first got to know
-            about them. Why not just run the models on my own PC?
-          </FoolQuote>
-          <p className="text-xl text-gray-300 leading-relaxed mt-6 mb-6">
-            Turns out, Jupyter is one of the most useful pieces of software
-            there is. It received the highest honor in software, the ACM System
-            Award, and it is the most widely used piece of software for deep
-            learning and data science.
-          </p>
-
-          <Card className="bg-gray-900/50 border-gray-800">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-4">
-                <Image
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
-                  alt="Jupyter"
-                  width={48}
-                  height={48}
-                  className="flex-shrink-0 bg-white rounded-full p-1"
-                />
-                <div>
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    Jupyter Notebooks provide an interactive environment to
-                    write and run code, visualize data, and share your work.
-                    They are perfect for data exploration and experimentation.
-                  </p>
-                  <Button asChild className="mt-2">
-                    <a
-                      href="https://jupyter.org/try"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Try Jupyter
-                    </a>
-                  </Button>
                 </div>
               </div>
             </CardContent>
@@ -559,19 +558,19 @@ const FoolsJourneyPost = () => {
         <section>
           <h2 className="text-3xl font-bold text-white mb-4">Conclusion</h2>
           <p className="text-xl text-gray-300 leading-relaxed">
-            This is all I learned in the first week of my deep learning
-            journey. I hope this post has been helpful to you, it certainly has to me. If you read this far, I want to thank you for
-            taking the time to read my thoughts and experiences.
-            This is just the beginning of my journey into deep learning. I hope
-            to share more insights and experiences in future posts. Stay tuned!
-            I would love to hear your thoughts, questions, or any topics you
-            would like me to cover in this series. Feel free to reach out to me
-            on my social media or through my email. I&apos;m always open to
-            suggestions and discussions.
+            This is all I learned in the first week of my deep learning journey.
+            I hope this post has been helpful to you, it certainly has to me. If
+            you read this far, I want to thank you for taking the time to read
+            my thoughts and experiences. This is just the beginning of my
+            journey into deep learning. I hope to share more insights and
+            experiences in future posts. Stay tuned! I would love to hear your
+            thoughts, questions, or any topics you would like me to cover in
+            this series. Feel free to reach out to me on my social media or
+            through my email. I&apos;m always open to suggestions and
+            discussions.
           </p>
           <p>- sabittwa.work@gmail.com</p>
         </section>
-
       </div>
     </BlogPostLayout>
   );
