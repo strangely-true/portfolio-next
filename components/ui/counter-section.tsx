@@ -49,9 +49,9 @@ export function CounterSection() {
       <div className="absolute inset-0" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <AnimatedCounter value={900} title="LinkedIn Followers" suffix="+" />
-          <AnimatedCounter value={40} title="LeetCode Problems Solved" />
-          <AnimatedCounter value={700} title="Github Contributions" suffix="+" />
+          <AnimatedCounter value={1200} title="LinkedIn Followers" suffix="+" />
+          <AnimatedCounter value={50} title="LeetCode Problems Solved" />
+          <AnimatedCounter value={900} title="Github Contributions" suffix="+" />
         </div>
       </div>
     </section>

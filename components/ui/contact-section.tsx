@@ -126,10 +126,10 @@ export default function ContactSection() {
       >
         <p>©2025 Sabittwa Banerjee</p>
         <div className="flex items-center space-x-2">
-          <span className="w-2 h-2 rounded-full bg-green-500" />
-          <span>Available for a full-time position</span>
+          <span className="w-2 h-2 rounded-full bg-red-500" />
+          <span>Unavailable for a full-time position</span>
         </div>
-        <p>Made by Sabittwa B.</p>
+        <p>Made by Sabittwa.</p>
       </motion.div>
     </>
   )
